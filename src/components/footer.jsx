@@ -3,6 +3,7 @@ import { Button } from "./button";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 
 import { AiFillInstagram } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -41,8 +42,8 @@ export const Footer = () => {
           </div>
 
           <div className="lg:flex lg:flex-col lg:gap-5 flex gap-12">
-            <Button label="Register" bgColor="#FF7A00" />
-            <Button label="Log In" />
+            <Link to="/register" className="bg-[#FF7A00] py-2 text-center rounded-md">Register</Link>
+            <Link to="/login"><Button label="Log In" /></Link>
           </div>
         </div>
       </div>

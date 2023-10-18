@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import HomePage from './pages/Homepage'
 import './styles/index.css'
+import Router from './routes/Router'
+import { TokenProvider } from './utils/context/token'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HomePage />
+    <TokenProvider>
+      <Router/>
+    </TokenProvider>
   </React.StrictMode>,
 )

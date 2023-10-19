@@ -98,7 +98,7 @@ export default function Register() {
           <img
             src="./Register.png"
             alt=""
-            className="h-[750px] mt-14 rounded-lg"
+            className="h-[750px] mt-9 rounded-lg"
           />
         </div>
       </div>

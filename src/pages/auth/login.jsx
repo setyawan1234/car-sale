@@ -92,7 +92,7 @@ export default function Login() {
           <img
             src="./Login.png"
             alt=""
-            className="h-[750px] mt-14 rounded-lg"
+            className="h-[750px] mt-9 rounded-lg"
           />
         </div>
       </div>

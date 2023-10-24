@@ -17,7 +17,7 @@ export const Button = (props) => {
 };
 
 export const Button2 = (props) => {
-  const { label, bgColor, color, borderColor } = props;
+  const { label, bgColor, color, borderColor, onClick, type } = props;
   const buttonStyle = {
     backgroundColor: bgColor,
     color: color,
@@ -26,8 +26,14 @@ export const Button2 = (props) => {
 
   return (
     <>
-      <button className="rounded-3xl px-8 py-2 text-[14px]" style={buttonStyle}>{label}</button>
-      
+      <button
+        className="rounded-3xl px-8 py-2 text-[14px]"
+        onClick={onClick}
+        type={type}
+        style={buttonStyle}
+      >
+        {label}
+      </button>
     </>
   );
 };

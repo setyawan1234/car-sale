@@ -50,7 +50,7 @@ function HomePage() {
                   providing you with quality car options.
                 </p>
                 <div className="flex items-center justify-start gap-16">
-                  <Button label="Explore More" bgColor="#FF7A00" />
+                  <Link to="/list-car"><Button label="Explore More" bgColor="#FF7A00" /></Link>
                   <Link to="/register"><Button label="Register"/></Link>
                 </div>
               </div>

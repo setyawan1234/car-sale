@@ -3,6 +3,7 @@ import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
 import { useToken } from "@/utils/context/token";
 import { Link } from "react-router-dom";
+import Union from "../assets/Union.png";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const Navbar = () => {
     <div className="lg:px-16 lg:py-2 p-2 lg:flex lg:justify-between lg:items-center flex justify-between items-center font-poppins shadow-md shadow-zinc-300">
       <div className="flex justify-center lg:gap-2 gap-1">
         <img
-          src="./Union.svg"
+          src={Union}
           alt=""
           className="lg:h-[39px] lg:w-[51px] h-[20px] w-[20px]  "
         />

@@ -33,10 +33,10 @@ export const ServiceProduct = () => {
                 for cash purchases.
               </p>
             </div>
-            <div className="lg:h-[15rem] lg:w-[26rem] p-2 w-[20rem] flex flex-col justify-center items-center rounded-lg bg-white bg-opacity-75">
-              <BsFillCartCheckFill className="h-10 w-10 lg:mt-6 mt-3" />
+            <div className="lg:h-[15rem] lg:w-[26rem] flex flex-col justify-center items-center rounded-lg bg-white bg-opacity-75">
+              <BsFillCartCheckFill className="h-10 w-10 lg:mt-2 mt-3" />
               <p className="font-semibold text-[24px] p-4">After Sales</p>
-              <p className="text-center font-thin lg:w-[20rem] mb-3">
+              <p className="text-center font-thin w-[20rem] mb-3">
                 Provide after sales services for you, such as booking service,
                 insurance claims and 24-hour emergency service.
               </p>

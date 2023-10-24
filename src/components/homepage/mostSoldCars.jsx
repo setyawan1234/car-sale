@@ -19,7 +19,7 @@ export const MostSoldCars = () => {
               alt="car1.png"
               className="object-cover rounded-lg h-[480px] md:h-[669px]"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 h-[7rem] md:h-[6rem] p-4 rounded-t-lg">
+            <div className="absolute inset-0 bg-black bg-opacity-50 h-[7rem] lg:h-[8rem] p-4 rounded-t-lg">
               <p className="font-bold text-xl md:text-2xl lg:text-3xl mb-2">
                 Honda CR-V 2023
               </p>
@@ -27,7 +27,7 @@ export const MostSoldCars = () => {
                 More than <span className="font-semibold">10+ people</span> have
                 bought this car
               </p>
-              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[33rem] gap-5">
+              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[28rem] lg:mt-[33rem]  gap-5">
                 <p className="text-[#FF7A00] font-bold text-xl md:text-2xl lg:text-3xl">
                   HOT SELLS
                 </p>
@@ -41,7 +41,7 @@ export const MostSoldCars = () => {
               alt="car2.jpeg"
               className="object-cover rounded-lg h-[480px] md:h-[669px]"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 h-[7rem] md:h-[6rem] p-4 rounded-t-lg">
+            <div className="absolute inset-0 bg-black bg-opacity-50 h-[7rem] lg:h-[8rem] p-4 rounded-t-lg">
               <p className="font-bold text-xl md:text-2xl lg:text-3xl mb-2">
                 Toyota Kijang Innova 2023
               </p>
@@ -49,7 +49,7 @@ export const MostSoldCars = () => {
                 More than <span className="font-semibold">20+ people</span> have
                 bought this car
               </p>
-              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[33rem] gap-5">
+              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[28rem] lg:mt-[30.8rem] xl:mt-[33rem] gap-5">
                 <p className="text-[#FF7A00] font-bold text-xl md:text-2xl lg:text-3xl">
                   HOT SELLS
                 </p>
@@ -71,7 +71,7 @@ export const MostSoldCars = () => {
                 More than <span className="font-semibold">3+ people</span> have
                 bought this car
               </p>
-              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[33rem] gap-5">
+              <div className="flex justify-center items-center mt-[20.5rem] md:mt-[26rem] lg:mt-[30.8rem] xl:mt-[33rem] gap-5">
                 <p className="text-[#FF7A00] font-bold text-xl md:text-2xl lg:text-3xl">
                   HOT SELLS
                 </p>

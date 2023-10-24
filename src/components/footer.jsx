@@ -1,16 +1,16 @@
 import React from "react";
 import { Button } from "./button";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
-
 import { AiFillInstagram } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Union from "../assets/Union.png";
 
 export const Footer = () => {
   return (
     <div className="bg-black w-full lg:h-[16rem] h-[36rem] text-white font-poppins lg:p-8 p-1">
       <div className="container mx-auto  lg:flex lg:justify-between lg:flex-row flex justify-center flex-col my-5">
         <div className="lg:flex lg:justify-start flex items-center lg:items-start gap-3 cursor-pointer">
-          <img src="./Union.svg" alt="" className="lg:h-[39px] lg:w-[51px]" />
+          <img src={Union} alt="" className="lg:h-[39px] lg:w-[51px]" />
           <p className="lg:mt-[2px] font-bold lg:text-[32px] text-[14px]">
             Car-sale.
           </p>

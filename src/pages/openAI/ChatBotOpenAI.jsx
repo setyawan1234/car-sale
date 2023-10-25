@@ -24,7 +24,6 @@ export default function ChatBotOpenAI() {
       const response = await openai.chat.completions.create({
         messages: [{ role: "system", content: "You are a helpful chatbot." }],
         model: "gpt-3.5-turbo",
-        max_tokens: 150,
       });
       setResults(response.choices);
     } catch (error) {

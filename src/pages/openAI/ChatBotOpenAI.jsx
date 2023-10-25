@@ -71,7 +71,7 @@ export default function ChatBotOpenAI() {
                 "rounded-lg p-3 mb-4 w-fit",
                 output.message.role === "assistant"
                   ? "self-start ml-2 mt-2 bg-green-500 text-black max-w-sm"
-                  : "self-end bg-gray-500 text-black max-w-sm mr-2 mt-2"
+                  : "self-end bg-gray-200 text-black max-w-sm mr-2 mt-2"
               )}
               key={output.message.content}
             >

@@ -7,11 +7,9 @@ import { Provider } from "react-redux";
 import storeRedux from "./utils/state/car/store/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Provider store={storeRedux}>
-      <TokenProvider>
-        <Router />
-      </TokenProvider>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={storeRedux}>
+    <TokenProvider>
+      <Router />
+    </TokenProvider>
+  </Provider>
 );

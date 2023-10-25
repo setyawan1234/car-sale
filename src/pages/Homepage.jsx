@@ -29,7 +29,7 @@ function HomePage() {
           <Navbar />
 
           {/* section body */}
-          <div className="relative font-poppins text-white mb-12">
+          <div className="relative font-poppins text-white mb-12 ">
             <img
               src="./bg-body-hero.png"
               alt="bg-body-hero"

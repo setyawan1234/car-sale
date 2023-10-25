@@ -6,7 +6,6 @@ import { fetchCar } from "@/utils/state/car/reduce/reducer";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BiSolidCategoryAlt } from "react-icons/bi";
-
 export default function ListCar() {
   const car = useSelector((state) => state.car.data);
   const loading = useSelector((state) => state.car.loading);
@@ -32,7 +31,7 @@ export default function ListCar() {
       <Navbar />
 
       <div className="container mx-auto font-poppins">
-        <div className="flex lg:justify-between lg:items-center lg:flex-row lg:px-44 lg:pt-12 lg:pb-24 flex-col items-start px-2 py-5">
+        <div className="flex lg:justify-between lg:items-center lg:flex-row lg:px-44 lg:pt-12 lg:pb-16 flex-col items-start px-5 py-5">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-3">
               <BiSolidCategoryAlt className="h-8 w-8 text-[#FF7A00]" />
@@ -43,7 +42,7 @@ export default function ListCar() {
             <p className="ml-[45px] lg:w-[503px] text-[14px]">
               Discover a wide selection of cars specially designed with
               precision through modern technology and stylish design to suit
-              your style. Trust our Dealer Car-Sale Malang PT. SUKA MAJU MUNDUR
+              your style. Trust our Dealer Car-Sale Malang <strong>PT. SUKA MAJU MUNDUR </strong>
               Authorized Pak Sugeng Jaya.
             </p>
           </div>

@@ -3,7 +3,8 @@ import Login from "@/pages/auth/login";
 import Register from "@/pages/auth/register";
 import ListCar from "@/pages/ListCar";
 import DetailCar from "@/pages/DetailCar";
-import { useToken } from "@/utils/context/token";
+import Admin from "@/pages/admin/Admin";
+import ChatBotOpenAI from "@/pages/openAI/ChatBotOpenAI";
 
 import {
   createBrowserRouter,
@@ -12,7 +13,7 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react";
 import { setAxiosConfig } from "@/utils/axiosWithConfig";
-import Admin from "@/pages/admin/Admin";
+import { useToken } from "@/utils/context/token";
 
 export default function Router() {
   const { token } = useToken();
@@ -45,6 +46,10 @@ export default function Router() {
       path: "/role-admin",
       element: <Admin />,
     },
+    {
+      path: "/bot",
+      element: <ChatBotOpenAI/>
+    }
   ]);
   return <RouterProvider router={router} />;
 }

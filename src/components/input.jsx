@@ -37,4 +37,19 @@ function InputElement(props) {
   );
 }
 
-export { InputElement };
+function InputTextAI(props) {
+  const { placeholder, value, onChange, type } = props;
+  return (
+    <div className="flex flex-col">
+      <input
+        className="rounded-lg px-4 py-2 w-[80vw] text-black"
+        value={value}
+        type={type}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
+    </div>
+  );
+}
+
+export { InputElement, InputTextAI };

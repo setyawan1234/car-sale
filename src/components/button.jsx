@@ -27,7 +27,7 @@ export const Button2 = (props) => {
   return (
     <>
       <button
-        className="rounded-3xl px-8 py-2 text-[14px]"
+        className="rounded-lg px-4 py-2 text-[14px]"
         onClick={onClick}
         type={type}
         style={buttonStyle}

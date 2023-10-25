@@ -63,15 +63,15 @@ export default function ChatBotOpenAI() {
     <>
       <Navbar />
 
-      <div className="bg-gray-900 lg:h-[93vh] h-[92vh] text-gray-100 flex flex-col">
+      <div className="bg-gray-900 h-[93.1vh] text-gray-100 flex flex-col">
         <div className="w-full h-[81.4vh] grow flex flex-col overflow-auto">
           {results.map((output) => (
             <p
               className={clsx(
                 "rounded-lg p-3 mb-4 w-fit",
                 output.message.role === "assistant"
-                  ? "self-start ml-2 mt-2 bg-green-500 text-black max-w-sm"
-                  : "self-end bg-gray-200 text-black max-w-sm mr-2 mt-2"
+                  ? "self-start ml-2 mt-2 bg-green-500 text-black max-w-3xl"
+                  : "self-end bg-gray-200 text-black max-w-3xl mr-2 mt-2"
               )}
               key={output.message.content}
             >

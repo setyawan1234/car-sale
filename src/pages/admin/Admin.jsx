@@ -15,20 +15,24 @@ import {
   updateProduct,
 } from "@/utils/state/car/reduce/reducer";
 import Swal from "sweetalert2";
+import Table from "@/components/table";
 import { LoadingAnimation } from "@/components/loading";
 import { Button2 } from "@/components/button";
 import { IoPencil, IoTrash } from "react-icons/io5";
-import Table from "@/components/table";
 import { Number } from "@/components/number";
 import { Link } from "react-router-dom";
 const schema = z.object({
   id: z.string().optional(),
-  nameProduct: z.string().min(3, { message: "Name must be at least 3 characters" }),
+  nameProduct: z
+    .string()
+    .min(3, { message: "Name must be at least 3 characters" }),
   priceProduct: z.number().min(1, { message: "Price must be at least 1" }),
   image: z.string().url({ message: "Image must be a valid URL" }),
   imgSpec1: z.string().url({ message: "Image must be a valid URL" }),
   imgSpec2: z.string().url({ message: "Image must be a valid URL" }),
-  description: z.string().min(3, { message: "Description must be more 3 characters" }),
+  description: z
+    .string()
+    .min(3, { message: "Description must be more 3 characters" }),
   ovrLength: z.number().min(1, { message: "Ovr Length must be at least 1" }),
   ovrWidth: z.number().min(1, { message: "Ovr Width must be at least 1" }),
   ovrHeight: z.number().min(1, { message: "Ovr Height must be at least 1" }),
@@ -79,18 +83,19 @@ export default function Admin() {
         header: "Price Product",
         accessorKey: "priceProduct",
         cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                Rp <Number number={info.row.original.priceProduct}/>
-            </div>
+          <div className="flex gap-1 items-center justify-center">
+            Rp <Number number={info.row.original.priceProduct} />
+          </div>
         ),
         footer: (props) => props.column.id,
       },
       {
         header: "Overall Length",
-        accessorKey: "ovrLength",cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                <Number number={info.row.original.ovrLength}/> mm
-            </div>
+        accessorKey: "ovrLength",
+        cell: (info) => (
+          <div className="flex gap-1 items-center justify-center">
+            <Number number={info.row.original.ovrLength} /> mm
+          </div>
         ),
         footer: (props) => props.column.id,
       },
@@ -98,9 +103,9 @@ export default function Admin() {
         header: "Overall Width",
         accessorKey: "ovrWidth",
         cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                <Number number={info.row.original.ovrWidth}/> mm
-            </div>
+          <div className="flex gap-1 items-center justify-center">
+            <Number number={info.row.original.ovrWidth} /> mm
+          </div>
         ),
         footer: (props) => props.column.id,
       },
@@ -108,9 +113,9 @@ export default function Admin() {
         header: "Overall Height",
         accessorKey: "ovrHeight",
         cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                <Number number={info.row.original.ovrHeight}/> mm
-            </div>
+          <div className="flex gap-1 items-center justify-center">
+            <Number number={info.row.original.ovrHeight} /> mm
+          </div>
         ),
         footer: (props) => props.column.id,
       },
@@ -118,9 +123,9 @@ export default function Admin() {
         header: "Seating",
         accessorKey: "seat",
         cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                <Number number={info.row.original.seat}/> Persons
-            </div>
+          <div className="flex gap-1 items-center justify-center">
+            <Number number={info.row.original.seat} /> Persons
+          </div>
         ),
         footer: (props) => props.column.id,
       },
@@ -128,9 +133,9 @@ export default function Admin() {
         header: "Fuel Tank",
         accessorKey: "fuelTank",
         cell: (info) => (
-            <div className="flex gap-1 items-center justify-center">
-                <Number number={info.row.original.fuelTank}/> L
-            </div>
+          <div className="flex gap-1 items-center justify-center">
+            <Number number={info.row.original.fuelTank} /> L
+          </div>
         ),
         footer: (props) => props.column.id,
       },
@@ -161,34 +166,34 @@ export default function Admin() {
         header: "Image Specification 1",
         accessorKey: "imgSpec1",
         cell: (info) => (
-            <div className="flex items-center justify-center space-x-3">
-              <div className="avatar">
-                <div className="mask mask-squircle w-12 h-12">
-                  <img
-                    src={info.row.original.imgSpec1}
-                    alt={info.row.original.productName}
-                  />
-                </div>
+          <div className="flex items-center justify-center space-x-3">
+            <div className="avatar">
+              <div className="mask mask-squircle w-12 h-12">
+                <img
+                  src={info.row.original.imgSpec1}
+                  alt={info.row.original.productName}
+                />
               </div>
             </div>
-          ),
+          </div>
+        ),
         footer: (props) => props.column.id,
       },
       {
         header: "Image Specification 2",
         accessorKey: "imgSpec2",
         cell: (info) => (
-            <div className="flex items-center justify-center space-x-3">
-              <div className="avatar">
-                <div className="mask mask-squircle w-12 h-12">
-                  <img
-                    src={info.row.original.imgSpec2}
-                    alt={info.row.original.productName}
-                  />
-                </div>
+          <div className="flex items-center justify-center space-x-3">
+            <div className="avatar">
+              <div className="mask mask-squircle w-12 h-12">
+                <img
+                  src={info.row.original.imgSpec2}
+                  alt={info.row.original.productName}
+                />
               </div>
             </div>
-          ),
+          </div>
+        ),
         footer: (props) => props.column.id,
       },
       {
@@ -198,6 +203,7 @@ export default function Admin() {
           <IoPencil
             aria-label="action-edit"
             onClick={() => onClickEdit(info.row.original)}
+            className="cursor-pointer"
           />
         ),
         footer: (props) => props.column.id,
@@ -209,6 +215,7 @@ export default function Admin() {
           <IoTrash
             aria-label="action-delete"
             onClick={() => onClickDelete(info.row.original.id)}
+            className="cursor-pointer"
           />
         ),
         footer: (props) => props.column.id,
@@ -309,7 +316,12 @@ export default function Admin() {
       <Navbar />
 
       <div className=" container mx-auto p-10 font-poppins">
-      <Link to="/list-car" className="px-4 bg-slate-500 text-white rounded-3xl">List Car</Link>
+        <Link
+          to="/list-car"
+          className="px-4 bg-slate-500 text-white rounded-3xl"
+        >
+          List Car
+        </Link>
         <div className="text-center flex flex-col items-center gap-5 py-5">
           <p className="text-[26px] font-bold">Admin</p>
           <p className="w-[50%]">
@@ -447,7 +459,7 @@ export default function Admin() {
           </form>
         </div>
       </div>
-      
+
       <Table datas={car} columns={columns} aria-label="product-table" />
       <Footer />
     </>

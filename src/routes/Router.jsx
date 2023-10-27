@@ -4,8 +4,8 @@ import Register from "@/pages/auth/register";
 import ListCar from "@/pages/ListCar";
 import DetailCar from "@/pages/DetailCar";
 import Admin from "@/pages/admin/Admin";
+import BuyCar from "@/pages/BuyCar";
 import ChatBotOpenAI from "@/pages/openAI/ChatBotOpenAI";
-
 import {
   createBrowserRouter,
   Navigate,
@@ -14,6 +14,8 @@ import {
 import { useEffect } from "react";
 import { setAxiosConfig } from "@/utils/axiosWithConfig";
 import { useToken } from "@/utils/context/token";
+import StatusPayment from "@/pages/StatusPayment";
+import History from "@/pages/DetailPaymentCar";
 
 export default function Router() {
   const { token } = useToken();
@@ -27,14 +29,6 @@ export default function Router() {
       element: <HomePage />,
     },
     {
-      path: "/login",
-      element: token === "" ? <Login /> : <Navigate to="/" />,
-    },
-    {
-      path: "/register",
-      element: token === "" ? <Register /> : <Navigate to="/" />,
-    },
-    {
       path: "/list-car",
       element: <ListCar />,
     },
@@ -43,13 +37,33 @@ export default function Router() {
       element: <DetailCar />,
     },
     {
+      path: "/bot",
+      element: token === "" ? <Navigate to="/login" /> : <ChatBotOpenAI />,
+    },
+    {
+      path: "/payments/:id",
+      element: token === "" ? <Navigate to="/login" /> : <BuyCar />,
+    },
+    {
+      path: "/status",
+      element: token === "" ? <Navigate to="/list-car"/> : <StatusPayment/>
+    },
+    {
+      path: "/history",
+      element: <History/>
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
       path: "/role-admin",
       element: <Admin />,
     },
-    {
-      path: "/bot",
-      element: <ChatBotOpenAI/>
-    }
   ]);
   return <RouterProvider router={router} />;
 }

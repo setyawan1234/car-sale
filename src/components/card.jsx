@@ -20,12 +20,14 @@ export default function Card(props) {
             </div>
             <img src={data.image} alt="" className="w-[420px] object-cover" />
             <div className="flex gap-5 mb-12">
-              <Button2
-                label="Buy"
-                borderColor="#0C71C3"
-                bgColor="#0C71C3"
-                color="white"
-              />
+              <Link to={`/payments/${data.id}`}>
+                <Button2
+                  label="Buy"
+                  borderColor="#0C71C3"
+                  bgColor="#0C71C3"
+                  color="white"
+                />  
+              </Link>
               <Link to={`/detail-car/${data.id}`}>
                 <Button2 label="Detail" borderColor="#0C71C3" />
               </Link>

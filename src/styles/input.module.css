@@ -1,0 +1,11 @@
+input[type=file]::file-selector-button{
+    border: none;
+    background:#9CA3AF;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+input[type=file]{
+    background-color: #FFFFFF;
+}

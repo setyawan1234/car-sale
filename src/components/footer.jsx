@@ -42,8 +42,8 @@ export const Footer = () => {
           </div>
 
           <div className="lg:flex lg:flex-col lg:gap-5 flex gap-12">
-            <Link to="/register" className="bg-[#FF7A00] py-2 text-center rounded-md">Register</Link>
-            <Link to="/login"><Button label="Log In" /></Link>
+            <Link to="/register" className="bg-[#FF7A00] py-2 px-5 text-center rounded-md">Register</Link>
+            <Link to="/login" className="border-[#FF7A00] border-2 rounded-md py-2 px-5">Log In</Link>
           </div>
         </div>
       </div>

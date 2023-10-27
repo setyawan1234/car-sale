@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { InputTextAI } from "@/components/input";
 import { Button2 } from "@/components/button";
+import { LoadingAnimation } from "@/components/loading";
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
@@ -13,7 +14,7 @@ const openai = new OpenAI({
 export default function ChatBotOpenAI() {
   const [prompt, setPrompt] = useState("");
   const [results, setResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchDataOpenAI();
@@ -34,7 +35,7 @@ export default function ChatBotOpenAI() {
   }
 
   const handleSubmit = async (event) => {
-    setIsLoading(true);
+    setIsLoading(false);
     event.preventDefault();
     const userMsg = {
       message: {
@@ -61,44 +62,50 @@ export default function ChatBotOpenAI() {
 
   return (
     <>
-      <Navbar />
+      {isLoading ? (
+        <LoadingAnimation />
+      ) : (
+        <div>
+          <Navbar />
 
-      <div className="bg-gray-900 h-[93.1vh] text-gray-100 flex flex-col">
-        <div className="w-full h-[81.4vh] grow flex flex-col overflow-auto">
-          {results.map((output) => (
-            <p
-              className={clsx(
-                "rounded-lg p-3 mb-4 w-fit",
-                output.message.role === "assistant"
-                  ? "self-start ml-2 mt-2 bg-green-500 text-black max-w-3xl"
-                  : "self-end bg-gray-200 text-black max-w-3xl mr-2 mt-2"
-              )}
-              key={output.message.content}
+          <div className="bg-gray-900 lg:h-[93vh] h-[93.1vh] text-gray-100 flex flex-col">
+            <div className="w-full h-[81.4vh] grow flex flex-col overflow-auto">
+              {results.map((output) => (
+                <p
+                  className={clsx(
+                    "rounded-lg p-3 mb-4 w-fit",
+                    output.message.role === "assistant"
+                      ? "self-start ml-2 mt-2 bg-green-500 text-black max-w-3xl"
+                      : "self-end bg-gray-200 text-black max-w-3xl mr-2 mt-2"
+                  )}
+                  key={output.message.content}
+                >
+                  {output.message.content}
+                </p>
+              ))}
+            </div>
+            <form
+              onSubmit={handleSubmit}
+              className="flex justify-center items-center gap-2 mb-5 px-2"
             >
-              {output.message.content}
-            </p>
-          ))}
+              <InputTextAI
+                type="text"
+                placeholder="Input your text -_-"
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
+              />
+              <Button2
+                label={isLoading ? "Loading..." : "Send"}
+                type="submit"
+                disabled={isLoading}
+                aria-disabled={isLoading}
+                bgColor="#22C55E"
+                color="text-black"
+              />
+            </form>
+          </div>
         </div>
-        <form
-          onSubmit={handleSubmit}
-          className="flex justify-center items-center gap-2 mb-5 px-2"
-        >
-          <InputTextAI
-            type="text"
-            placeholder="Input your text -_-"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-          <Button2
-            label={isLoading ? "Loading..." : "Send"}
-            type="submit"
-            disabled={isLoading}
-            aria-disabled={isLoading}
-            bgColor="#22C55E"
-            color="text-black"
-          />
-        </form>
-      </div>
+      )}
     </>
   );
 }

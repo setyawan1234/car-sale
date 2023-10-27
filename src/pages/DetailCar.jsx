@@ -5,16 +5,8 @@ import { Navbar } from "@/components/navbar";
 import { useEffect, useState } from "react";
 import { Number } from "@/components/number";
 import React from "react";
-import axiosWithConfig from "@/utils/axiosWithConfig";
 import { Button2 } from "@/components/button";
-export const detailProduct = async (productId) => {
-  try {
-    const response = await axiosWithConfig.get("/list-cars/" + productId);
-    return response.data;
-  } catch (error) {
-    throw new Error("Error when fetching detail product");
-  }
-};
+import { detailProduct } from "@/utils/apis/products/api";
 
 export default function DetailCar() {
   const [products, setProducts] = useState([]);
@@ -52,7 +44,7 @@ export default function DetailCar() {
                     to="/list-car"
                     className="rounded-full bg-slate-500 px-4 py-1 text-white"
                   >
-                    List Car
+                    Back to List Car
                   </Link>
                   <p className="font-semibold">/ {products.nameProduct}</p>
                 </div>

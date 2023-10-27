@@ -24,7 +24,7 @@ import {
           <table className="table w-full" aria-label={props["aria-label"]}>
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id} className="bg-gray-200">
+                <tr key={headerGroup.id} className="bg-gray-700 text-white">
                   {headerGroup.headers.map((header) => {
                     return (
                       <th
@@ -52,7 +52,7 @@ import {
                 return (
                   <tr
                     aria-label="row"
-                    className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
+                    className={index % 2 === 0 ? "bg-gray-200" : "bg-white"}
                     key={row.id}
                   >
                     {row.getVisibleCells().map((cell) => {

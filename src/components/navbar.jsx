@@ -21,7 +21,7 @@ export const Navbar = () => {
   const links = [
     { to: "/", text: "Home" },
     { to: "/list-car", text: "List Car" },
-    { to: "/", text: "History" },
+    { to: "/history", text: "History" },
   ];
 
   if (token !== "") {

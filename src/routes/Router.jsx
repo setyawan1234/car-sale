@@ -50,7 +50,7 @@ export default function Router() {
     },
     {
       path: "/history",
-      element: <History/>
+      element: token === "" ? <Navigate to="/login"/> : <History/>
     },
     {
       path: "/login",

@@ -1,4 +1,5 @@
 # Link Deploy Vercel : [Klik disini](https://car-sale-one.vercel.app/)
+# Link MVP : [Klik disini](https://docs.google.com/document/d/1KOhZEoeWWSiHAiDiUe1ABX3HhL9BqACY/edit)
 
 - Akses Chat AI -> login -> input `username : user1` -> input `password : 1234`
 

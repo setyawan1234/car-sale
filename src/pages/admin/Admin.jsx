@@ -8,12 +8,14 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+
 import {
   createProduct,
   deleteProduct,
   fetchCar,
   updateProduct,
 } from "@/utils/state/car/reduce/reducer";
+
 import Swal from "sweetalert2";
 import Table from "@/components/table";
 import { LoadingAnimation } from "@/components/loading";
@@ -21,6 +23,7 @@ import { Button2 } from "@/components/button";
 import { IoPencil, IoTrash } from "react-icons/io5";
 import { Number } from "@/components/number";
 import { Link } from "react-router-dom";
+
 const schema = z.object({
   id: z.string().optional(),
   nameProduct: z
@@ -293,7 +296,7 @@ export default function Admin() {
           text: "Success",
           icon: "success",
         });
-        dispatch(fetchData());
+        dispatch(fetchCar());
       } catch (error) {
         Swal.fire({
           title: "Error",

@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosWithConfig from "@/utils/axiosWithConfig";
 
+// createAsyncThunk membuat action creator yang menanngani pemanggilan API
+
+
 export const fetchCar = createAsyncThunk("data/fetchCar", async () => {
     try {
         const response = await axiosWithConfig.get("/list-cars");
@@ -54,7 +57,7 @@ const carSlice = createSlice({
     name: "data",
     initialState,
     reducers: {},
-    extraReducers: (builder) => {
+    extraReducers: (builder) => { //menangani perubahan state yang terkait dengan action seperti pending, fulfilled, dan rejected 
         builder
             // fetch
             .addCase(fetchCar.pending, (state) => {

@@ -9,8 +9,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { InputPayment, SelectOption } from "@/components/input";
 import { ShippingMethod } from "@/components/shippingMethod";
-import { createProduct, detailProduct } from "@/utils/apis/products/api";
 import { LoadingAnimation } from "@/components/loading";
+
+import { createProduct, detailProduct } from "@/utils/apis/products/api";
 
 const schema = z.object({
   id: z.string().optional(),
@@ -37,6 +38,7 @@ export default function BuyCar() {
   const {
     register,
     reset,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -53,6 +55,8 @@ export default function BuyCar() {
   async function detailDataProduct() {
     try {
       const result = await detailProduct(productId.id);
+      setValue("price", result.priceProduct);
+      setValue("nameCar", result.nameProduct);
       setProducts(result);
       setIsLoading(false);
     } catch (error) {
@@ -219,6 +223,7 @@ export default function BuyCar() {
                   name="nameCar"
                   label="Name Car"
                   value={products.nameProduct}
+                  disabled={true}
                   register={register}
                   error={errors.nameCar?.message}
                 />
@@ -243,6 +248,7 @@ export default function BuyCar() {
                   label="Price Product"
                   value={products.priceProduct}
                   register={register}
+                  disabled={true}
                   error={errors.price?.message}
                   type="number"
                 />

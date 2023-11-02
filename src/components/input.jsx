@@ -48,7 +48,7 @@ function InputElement(props) {
 }
 
 function InputPayment(props) {
-  const { label, placeholder, type, id, register, name, error, value } = props;
+  const { label, placeholder, type, id, register, name, error, value,disabled } = props;
   const inputClasses = clsx(
     "w-full rounded-md border border-gray-200 py-3 px-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500",
     !error && "border-slate-300"
@@ -61,6 +61,7 @@ function InputPayment(props) {
         <input
           className={inputClasses}
           type={type}
+          disabled={disabled}
           placeholder={placeholder}
           id={id}
           value={value}

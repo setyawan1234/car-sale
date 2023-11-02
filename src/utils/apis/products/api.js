@@ -23,7 +23,7 @@ export const createProduct = async (product) => {
     }
 }
 
-// product car
+// list cars
 export const detailProduct = async (productId) => {
     try {
         const response = await axiosWithConfig.get("/list-cars/" + productId);

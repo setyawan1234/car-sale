@@ -7,6 +7,7 @@ import Union from "../assets/Union.png";
 export const Navbar = () => {
   const navigate = useNavigate();
   const { token, changeToken } = useToken();
+  const { role, changeRole } = useToken();
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -15,6 +16,7 @@ export const Navbar = () => {
 
   function handleLogout() {
     changeToken();
+    changeRole();
     navigate("/");
   }
 
@@ -24,8 +26,9 @@ export const Navbar = () => {
     { to: "/history", text: "History" },
   ];
 
-  if (token !== "") {
+  if (token !== "" && role !== "") {
     links.push({ to: "/bot", text: "Chat Bot" });
+    links.push({ to: "/role-admin" });
   }
 
   return (
@@ -83,7 +86,7 @@ export const Navbar = () => {
 
       {/* button login n logout */}
       <div className="text-white">
-        {token === "" ? (
+        {token === "" && role === "" ? (
           <Link to="/login">
             <p className="cursor-pointer bg-[#FF7A00] rounded-md px-4 py-2">
               Log In

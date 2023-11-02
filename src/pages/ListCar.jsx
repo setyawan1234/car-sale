@@ -7,18 +7,19 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BiSolidCategoryAlt } from "react-icons/bi";
 export default function ListCar() {
-  const car = useSelector((state) => state.car.data);
+
+  const car = useSelector((state) => state.car.data); // penggunaan hooks useSelector untuk mengambil data dari state redux yang disimpan pada variabel car
   const loading = useSelector((state) => state.car.loading);
   const error = useSelector((state) => state.car.error);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //untuk mendapatkan akses ke redux
 
-  useEffect(() => {
-    getDataCar();
+  useEffect(() => { //penggunaan useEffect untuk menjalankan fungsi getDataCar() ketika halaman di load
+    getDataCar(); 
   }, []);
 
   async function getDataCar() {
     try {
-      dispatch(fetchCar());
+      dispatch(fetchCar()); //mengambil data mobil dari redux
     } catch (error) {
       throw error;
     }

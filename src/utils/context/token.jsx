@@ -8,7 +8,9 @@ import {
   
   const contextValue = {
     token: "",
+    role: "",
     changeToken: () => {},
+    changeRole: () => {},
   };
   
   const TokenContext = createContext(contextValue);
@@ -16,6 +18,8 @@ import {
   function TokenProvider({ children }) {
     const initialValue = localStorage.getItem("user") ?? "";
     const [token, setToken] = useState(initialValue);
+    const initialValueRole = localStorage.getItem("admin") ?? "";
+    const [role, setRole] = useState(initialValueRole);
   
     const changeToken = useCallback(
       (data) => {
@@ -29,13 +33,28 @@ import {
       },
       [token]
     );
+
+    const changeRole = useCallback(
+      (data) => {
+        const newData = data ?? "";
+        if (data) {
+          localStorage.setItem("admin", newData);
+        }else {
+            localStorage.removeItem("admin");
+        }
+        setRole(newData);
+      },
+      [role]
+    );
   
     const tokenContextValue = useMemo(
       () => ({
         token,
+        role,
         changeToken,
+        changeRole,
       }),
-      [token]
+      [token, role]
     );
   
     return (

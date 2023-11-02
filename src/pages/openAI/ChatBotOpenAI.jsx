@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { InputTextAI } from "@/components/input";
 import { Button2 } from "@/components/button";
 import { LoadingAnimation } from "@/components/loading";
+
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,

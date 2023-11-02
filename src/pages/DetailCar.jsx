@@ -12,7 +12,7 @@ export default function DetailCar() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const productId = useParams();
+  const productId = useParams(); //mengambil id dari url 
 
   useEffect(() => {
     detailDataProduct();

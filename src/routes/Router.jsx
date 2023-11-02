@@ -6,6 +6,10 @@ import DetailCar from "@/pages/DetailCar";
 import Admin from "@/pages/admin/Admin";
 import BuyCar from "@/pages/BuyCar";
 import ChatBotOpenAI from "@/pages/openAI/ChatBotOpenAI";
+import StatusPayment from "@/pages/StatusPayment";
+import History from "@/pages/DetailPaymentCar";
+import LoginAdmin from "@/pages/auth/loginAdmin";
+
 import {
   createBrowserRouter,
   Navigate,
@@ -14,11 +18,10 @@ import {
 import { useEffect } from "react";
 import { setAxiosConfig } from "@/utils/axiosWithConfig";
 import { useToken } from "@/utils/context/token";
-import StatusPayment from "@/pages/StatusPayment";
-import History from "@/pages/DetailPaymentCar";
 
 export default function Router() {
   const { token } = useToken();
+  const { role } = useToken();
 
   useEffect(() => {
     setAxiosConfig("", "https://651a7bf5340309952f0d5dfd.mockapi.io/api/v1");
@@ -62,8 +65,12 @@ export default function Router() {
     },
     {
       path: "/role-admin",
-      element: <Admin />,
+      element: role === "" ? <Navigate to="/login-admin"/> : <Admin />,
     },
+    {
+      path: "/login-admin",
+      element: <LoginAdmin/>
+    }
   ]);
   return <RouterProvider router={router} />;
 }

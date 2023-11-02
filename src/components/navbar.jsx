@@ -26,7 +26,7 @@ export const Navbar = () => {
     { to: "/history", text: "History" },
   ];
 
-  if (token !== "" && role !== "") {
+  if (token !== "" || role !== "") {
     links.push({ to: "/bot", text: "Chat Bot" });
     links.push({ to: "/role-admin" });
   }
